@@ -6,41 +6,43 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-list>
-    <ion-textarea class="ailton" maxlength="20" label="Nombre de la tarea:" labelPlacement="floating" fill="outline" placeholder="Enter text"></ion-textarea>
+<ion-content>
+  <ion-list>
+    <ion-item>
+      <ion-label position="floating">Nombre de la tarea:</ion-label>
+      <ion-input [(ngModel)]="tarea.nombre" name="nombre" type="text"></ion-input>
+    </ion-item>
 
+    <ion-item>
+      <ion-label>Mes</ion-label>
+      <ion-select [(ngModel)]="tarea.mes" name="mes">
+        <ion-select-option value="01">Enero</ion-select-option>
+        <ion-select-option value="02">Febrero</ion-select-option>
+        <ion-select-option value="03">Marzo</ion-select-option>
+        <ion-select-option value="04">Abril</ion-select-option>
+        <ion-select-option value="05">Mayo</ion-select-option>
+        <ion-select-option value="06">Junio</ion-select-option>
+        <ion-select-option value="07">Julio</ion-select-option>
+        <ion-select-option value="08">Agosto</ion-select-option>
+        <ion-select-option value="09">Septiembre</ion-select-option>
+        <ion-select-option value="10">Octubre</ion-select-option>
+        <ion-select-option value="11">Noviembre</ion-select-option>
+        <ion-select-option value="12">Diciembre</ion-select-option>
+      </ion-select>
 
+      <ion-label>Año</ion-label>
+      <ion-select [(ngModel)]="tarea.ano" name="ano">
+        <ion-select-option value="2024">2024</ion-select-option>
+        <ion-select-option value="2025">2025</ion-select-option>
+        <ion-select-option value="2026">2026</ion-select-option>
+      </ion-select>
+    </ion-item>
 
-  <ion-item>
+    <ion-item>
+      <ion-label position="floating">Descripción</ion-label>
+      <ion-textarea [(ngModel)]="tarea.descripcion" name="descripcion" rows="6"></ion-textarea>
+    </ion-item>
+  </ion-list>
 
-    <ion-select aria-label="Fruit" interface="popover" placeholder="Mes">
-      <ion-select-option value="01">Enero</ion-select-option>
-      <ion-select-option value="02">Febrero</ion-select-option>
-      <ion-select-option value="03">Marzo</ion-select-option>
-      <ion-select-option value="04">Abril</ion-select-option>
-      <ion-select-option value="05">Mayo</ion-select-option>
-      <ion-select-option value="06">Junio</ion-select-option>
-      <ion-select-option value="07">Julio</ion-select-option>
-      <ion-select-option value="08">Agosto</ion-select-option>
-      <ion-select-option value="09">Septiembre</ion-select-option>
-      <ion-select-option value="10">Octubre</ion-select-option>
-      <ion-select-option value="11">Noviembre</ion-select-option>
-      <ion-select-option value="12">Diciembre</ion-select-option>
-    </ion-select>
-
-    <ion-select aria-label="Fruit" interface="popover" placeholder="Año">
-      <ion-select-option value="2024">2024</ion-select-option>
-      <ion-select-option value="2025">2025</ion-select-option>
-      <ion-select-option value="2026">2026</ion-select-option>
-    </ion-select>
-
-  </ion-item>
-
-  
-
-
-<ion-textarea class="achu" minlength="15" maxlength="368" label="Descripción" labelPlacement="floating" fill="outline" placeholder="Enter text"></ion-textarea>
-
-<ion-button expand="block" fill="outline">Agregar Tarea</ion-button>
-
-</ion-list>
+  <ion-button expand="block" (click)="agregarTarea()">Agregar Tarea</ion-button>
+</ion-content>

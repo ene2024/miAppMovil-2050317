@@ -7,13 +7,16 @@ import { NavegacionService } from '../navigation.service';
   styleUrls: ['./lista-de-tareas.component.scss'],
 })
 export class ListaDeTareasComponent  implements OnInit {
+  tareas: any[] = []; // Arreglo para almacenar las tareas
 
   constructor(private navegacionService: NavegacionService) { }
 
-    abrirFormulario(){
-      this.navegacionService.navegarAFormulario();
-    }
+  abrirFormulario(){
+    this.navegacionService.navegarAFormulario();
+  }
 
-  ngOnInit() {}
-
+  ngOnInit() {
+    // Obtener las tareas del servicio al iniciar el componente
+    this.tareas = this.navegacionService.obtenerTareas();
+  }
 }
