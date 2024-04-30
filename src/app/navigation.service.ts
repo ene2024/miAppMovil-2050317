@@ -20,4 +20,11 @@ export class NavegacionService {
   obtenerTareas() {
     return this.tareas;
   }
+
+  eliminarTarea(tarea: any) {
+    const index = this.tareas.indexOf(tarea);
+    if (index !== -1) {
+      this.tareas.splice(index, 1);
+    }
+  }
 }

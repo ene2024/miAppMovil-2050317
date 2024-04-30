@@ -5,7 +5,17 @@
 
   <ion-card-content>
     <p>Fecha: {{ tarea.mes }}/{{ tarea.ano }}</p>
-    <p>{{ tarea.descripcion }}</p>
+    <ion-accordion-group>
+      <ion-accordion value="first">
+        <ion-item slot="header" color="light">
+          <ion-label>Descripcion</ion-label>
+        </ion-item>
+        <div class="ion-padding" slot="content"><p>{{ tarea.descripcion }}</p></div>
+      </ion-accordion>
+    </ion-accordion-group>
+    <ion-button slot="end" (click)="eliminarTarea(tarea)">
+      <ion-icon slot="icon-only" name="trash-outline"></ion-icon>
+    </ion-button>
   </ion-card-content>
 </ion-card>
 

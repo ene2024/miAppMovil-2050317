@@ -19,4 +19,9 @@ export class ListaDeTareasComponent  implements OnInit {
     // Obtener las tareas del servicio al iniciar el componente
     this.tareas = this.navegacionService.obtenerTareas();
   }
+
+  eliminarTarea(tarea: any) {
+    this.navegacionService.eliminarTarea(tarea);
+    this.tareas = this.navegacionService.obtenerTareas();
+  }
 }
