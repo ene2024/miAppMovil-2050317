@@ -15,6 +15,10 @@ export class ListaDeTareasComponent  implements OnInit {
     this.navegacionService.navegarAFormulario();
   }
 
+  abrirDetalleTarea(id: number){
+    this.navegacionService.navegarADetalleTarea(id); // Suponiendo que tienes un ID único para cada tarea
+  }
+
   ngOnInit() {
     // Obtener las tareas del servicio al iniciar el componente
     this.tareas = this.navegacionService.obtenerTareas();

@@ -1,0 +1,17 @@
+.tarea{
+    background-color: whitesmoke;
+    width: 800px;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 50px;
+    margin: 0;
+    padding: 0;
+
+}

@@ -13,12 +13,20 @@ export class NavegacionService {
     this.router.navigateByUrl('/formulario');
   }
 
+  navegarADetalleTarea(id: number) {
+    this.router.navigateByUrl(`/detalle-tarea/${id}`);
+  }
+
   agregarTarea(tarea: any) {
     this.tareas.push(tarea);
   }
 
   obtenerTareas() {
     return this.tareas;
+  }
+
+  obtenerTareaPorIndex(index: number) {
+    return this.tareas[index];
   }
 
   eliminarTarea(tarea: any) {

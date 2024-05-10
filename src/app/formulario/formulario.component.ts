@@ -21,5 +21,9 @@ export class FormularioComponent implements OnInit {
     this.navegacionService.agregarTarea(this.tarea);
     // Luego de agregar la tarea, puedes redirigir al usuario a la lista de tareas
     this.router.navigate(['/home']);
+
+    this.tarea.id = this.navegacionService.obtenerTareas().length;
   }
+
+  
 }
